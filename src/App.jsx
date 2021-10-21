@@ -1,24 +1,13 @@
-import React, { useState, useEffect } from "react";
-import logo from "./logo.svg";
+import React from "react";
 import "./App.css";
-
+import Form from "./components/Form.jsx";
+import Expences from "./components/Expences.jsx";
 function App() {
-  // Create the count state.
-  const [count, setCount] = useState(0);
-  // Update the count (+1 every second).
-  useEffect(() => {
-    const timer = setTimeout(() => setCount(count + 1), 1000);
-    return () => clearTimeout(timer);
-  }, [count, setCount]);
-  // Return the App component.
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Page has been open for <code>{count}</code> seconds.
-        </p>
-      </header>
+      <h1>Expence tracker app</h1>
+      <Form />
+      <Expences />
     </div>
   );
 }
